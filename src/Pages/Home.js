@@ -26,10 +26,12 @@ const Home = ({ history }) => {
   return (
     <div className={styles.image}>
       <div className="container mainContainer">
-        <h1 className={`${styles.colorTitle} title`}>
-          Receba agora na sua casa bebidas geladas a preço de mercado
-        </h1>
-        <SearchLocationInput addressSelected={addressSelected} />
+        <div className={styles.inputAddress}>
+          <h1 className={`${styles.colorTitle} title`}>
+            Receba agora na sua casa bebidas geladas a preço de mercado
+          </h1>
+          <SearchLocationInput addressSelected={addressSelected} />
+        </div>
       </div>
     </div>
   );

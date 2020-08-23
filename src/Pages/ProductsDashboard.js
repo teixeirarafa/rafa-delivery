@@ -1,65 +1,27 @@
 import React from 'react';
-import {
-  challengeAPI,
-  allCategoriesSearch,
-  products,
-} from '../service/ChallengesAPI';
+import Products from '../Components/Products';
+import { challengeAPI, allCategoriesSearch } from '../service/ChallengesAPI';
 
 const ProductsDashboard = ({ location }) => {
-  const [productList, setProductList] = React.useState([]);
-  const poc = location.state.poc.pocSearch;
-  console.log(productList);
-  React.useEffect(() => {
-    let categories;
+  const [categories, setCategories] = React.useState([]);
 
+  const poc = location.state.poc.pocSearch;
+
+  React.useEffect(() => {
     if (poc.length === 0) return;
 
     challengeAPI(allCategoriesSearch).then((resp) => {
-      categories = resp.data;
-
-      categories.allCategory.map((category) => {
-        return challengeAPI(products, {
-          id: poc[0].id,
-          search: '',
-          categoryId: category.id,
-        }).then((prd) => {
-          setProductList((prevState) => [
-            ...prevState,
-            Object.assign(prd.data.poc, { title: category.title }),
-          ]);
-        });
-      });
+      setCategories(resp.data.allCategory);
     });
-  }, [poc]);
+  }, [poc.length]);
 
-  return (
-    <div>
-      {poc.length === 0 && <div>não há produtos para serem exibidos</div>}
-
-      {productList !== 0 &&
-        productList.map((item, index) => (
-          <div className="container mainContainer" key={index}>
-            <h2>{item.title}</h2>
-            <div>
-              {item.products.map((item) => (
-                <div key={item.id}>
-                  <img
-                    src={item.images[0].url}
-                    alt={item.title}
-                    onError={(e) => {
-                      e.target.onerror = null;
-                      e.target.src = '../Assets/broken-1.png';
-                    }}
-                  />
-                  <div>{item.title}</div>
-                  <div>{item.productVariants[0].price}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-    </div>
-  );
+  if (poc.length === 0)
+    return (
+      <div className="container mainContainer">
+        não há produtos para serem exibidos
+      </div>
+    );
+  if (poc.length > 0) return <Products poc={poc} categories={categories} />;
 };
 
 export default ProductsDashboard;

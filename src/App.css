@@ -47,7 +47,7 @@ a {
 }
 
 .container {
-  max-width: 50rem;
+  max-width: 80rem;
   padding: 0 1rem;
   margin: 0 auto;
 }
@@ -68,4 +68,8 @@ a {
 
 .fontLogo {
   font-family: var(--type-logo);
+}
+
+.imageNotFound {
+  content: url('./Assets/nothing-found.png');
 }

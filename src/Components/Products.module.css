@@ -1,0 +1,108 @@
+.productContent {
+  background: #ffffff;
+  margin-bottom: 12px;
+}
+
+.shelfTitle {
+  color: #333;
+  padding: 16px 16px 8px 16px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.productsContainer {
+  background: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: auto;
+}
+
+.css14siswc {
+  display: flex;
+  cursor: pointer;
+  flex-flow: column;
+  position: relative;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border: 1px solid #ffc500;
+  margin-top: 4px;
+  margin-left: 16px;
+  margin-right: 8px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  text-align: left;
+  height: 208px;
+  min-width: 128px;
+  width: 128px;
+}
+
+@media (min-width: 575.98px) {
+  .css14siswc {
+    min-width: 181px;
+    width: 181px;
+  }
+}
+
+.css1tkwx94 {
+  width: 100%;
+  height: 110px;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.productImage {
+  height: 105px;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  padding: 5px;
+}
+
+.css-f7r0t7 {
+  margin: 0;
+  width: 100%;
+  border: 1px solid rgb(243, 243, 243);
+}
+
+.productDetails {
+  padding: 8px;
+}
+
+.productTitle {
+  text-align: center;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 16px;
+  max-height: 32px;
+  font-size: 14px;
+  font-weight: 400;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.priceContainer {
+  width: 100%;
+  margin: 15px auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.priceText {
+  text-align: center;
+  font-weight: bold;
+  color: #333;
+  font-size: medium;
+}
