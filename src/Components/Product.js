@@ -1,9 +1,10 @@
 import React from 'react';
 import styles from './Product.module.css';
+import { Link } from 'react-router-dom';
 
-const Product = ({ item }) => {
+const Product = ({ history, item }) => {
   return (
-    <a href="sa">
+    <Link to={{ pathname: `/products/${item.id}`, state: { item } }}>
       <div className={styles.css14siswc}>
         <div className={styles.css1tkwx94}>
           <img
@@ -29,7 +30,7 @@ const Product = ({ item }) => {
           </div>
         </div>
       </div>
-    </a>
+    </Link>
   );
 };
 

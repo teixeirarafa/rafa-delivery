@@ -18,7 +18,9 @@ const ProductsDashboard = ({ location }) => {
   if (poc.length === 0)
     return (
       <div className="container mainContainer">
-        não há produtos para serem exibidos
+        <p style={{ textAlign: 'center', margin: '110px 0' }}>
+          não há produtos para serem exibidos
+        </p>
       </div>
     );
   if (poc.length > 0) return <Products poc={poc} categories={categories} />;
